@@ -1,0 +1,34 @@
+# Network Security & Scanning — Task 2 Report
+
+## 1. Reconnaissance
+- **Passive:** `whois` + `nslookup` on target; Google dorking and Shodan search for exposed info.
+  ![whois-nslookup](./screenshots/whois-nslookup.png)
+  ![google-dork](./screenshots/google-dork.png)
+  ![shodan](./screenshots/shodan-search.png)
+- **Active:** Ping sweep (`nmap -sn`) to find live hosts; banner grab via Netcat.
+  ![ping-sweep](./screenshots/ping-sweep.png)
+  ![banner-grab](./screenshots/banner-grab.png)
+
+## 2. Port & Service Scanning
+`nmap -sS -sU -sV -O <target-ip>`
+![scan-results](./screenshots/scan-results.png)
+
+
+## 3. Vulnerability Scanning
+Scanner: OpenVAS/Nessus → Target: Metasploitable2
+![vuln-scan](./screenshots/vuln-scan.png)
+
+
+## 4. Packet Analysis (Wireshark)
+- Captured HTTP/FTP/DNS traffic; pulled credentials from unencrypted FTP.
+  ![wireshark](./screenshots/wireshark-capture.png)
+  ![ftp-creds](./screenshots/ftp-credentials.png)
+- Simulated SYN flood with hping3.
+  ![syn-flood](./screenshots/syn-flood.png)
+
+## 5. Firewall Basics
+iptables rules to allow/deny ports; demonstrated blocking a scan.
+![iptables](./screenshots/iptables-rules.png)
+
+## Conclusion
+One or two lines on key takeaways.
